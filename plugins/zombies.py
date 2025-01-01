@@ -3,7 +3,7 @@ import asyncio
 from pyrogram import filters
 from pyrogram.enums import ChatMemberStatus
 from pyrogram.errors import FloodWait
-from YukkiMusic import app
+from DnsXMusic import app
 
 from utils.permissions import adminsOnly
 
@@ -26,17 +26,17 @@ async def remove(client, message):
             bot = await app.get_chat_member(message.chat.id, "self")
             if bot.status == ChatMemberStatus.MEMBER:
                 await message.reply(
-                    "➠ | ɪ ɴᴇᴇᴅ ᴀᴅᴍɪɴ ᴘᴇʀᴍɪssɪᴏɴs ᴛᴏ ʀᴇᴍᴏᴠᴇ ᴅᴇʟᴇᴛᴇᴅ ᴀᴄᴄᴏᴜɴᴛs."
+                    "➠ | 𝙎𝙞𝙡𝙞𝙣𝙚𝙣 𝙃𝙚𝙨𝙖𝙥𝙡𝙖𝙧ı 𝙮𝙖𝙡𝙣ı𝙯𝙘𝙖 𝘼𝙙𝙢𝙞𝙣𝙡𝙚𝙧 𝙮𝙖𝙨𝙖𝙠𝙡𝙖𝙮𝙖𝙗𝙞𝙡𝙞𝙩"
                 )
             else:
                 if len(chatQueue) > 30:
                     await message.reply(
-                        "➠ | ɪ'ᴍ ᴀʟʀᴇᴀᴅʏ ᴡᴏʀᴋɪɴɢ ᴏɴ ᴍʏ ᴍᴀxɪᴍᴜᴍ ɴᴜᴍʙᴇʀ ᴏғ 30 ᴄʜᴀᴛs ᴀᴛ ᴛʜᴇ ᴍᴏᴍᴇɴᴛ. ᴘʟᴇᴀsᴇ ᴛʀʏ ᴀɢᴀɪɴ sʜᴏʀᴛʟʏ."
+                        "➠ | 𝘽𝙚𝙣 𝙕𝙖𝙩𝙚𝙣 𝙎𝙞𝙡𝙞𝙣𝙚𝙣 𝙃𝙚𝙨𝙖𝙥𝙡𝙖𝙧ı 𝙔𝙖𝙨𝙖𝙠𝙡𝙖𝙙ı𝙢.."
                     )
                 else:
                     if message.chat.id in chatQueue:
                         await message.reply(
-                            "➠ | ᴛʜᴇʀᴇ's ᴀʟʀᴇᴀᴅʏ ᴀɴ ᴏɴɢɪɪɴɢ ᴘʀᴏᴄᴇss ɪɴ ᴛʜɪs ᴄʜᴀᴛ. ᴘʟᴇᴀsᴇ [ /stop ] ᴛᴏ sᴛᴀʀᴛ ᴀ ɴᴇᴡ ᴏɴᴇ."
+                            "➠ | 𝙞𝙨̧𝙡𝙚𝙢𝙞 𝙙𝙪𝙧𝙙𝙪𝙧𝙢𝙖𝙠 𝙞𝙘̧𝙞𝙣 𝙇𝙪̈𝙩𝙛𝙚𝙣 /stop 𝙆𝙤𝙢𝙪𝙩𝙪𝙣𝙪 𝙠𝙪𝙡𝙡𝙖𝙣ı𝙣. "
                         )
                     else:
                         chatQueue.append(message.chat.id)
@@ -46,14 +46,14 @@ async def remove(client, message):
                                 deletedList.append(member.user)
                         lenDeletedList = len(deletedList)
                         if lenDeletedList == 0:
-                            await message.reply("⟳ | ɴᴏ ᴅᴇʟᴇᴛᴇᴅ ᴀᴄᴄᴏᴜɴᴛs ɪɴ ᴛʜɪs ᴄʜᴀᴛ.")
+                            await message.reply("⟳ | 𝘽𝙪 𝙎𝙤𝙝𝙗𝙚𝙩𝙩𝙚 𝙎𝙞𝙡𝙞𝙣𝙚𝙣 𝙃𝙚𝙨𝙖𝙥 𝙔𝙤𝙠𝙩𝙪𝙧.")
                             chatQueue.remove(message.chat.id)
                         else:
                             k = 0
                             processTime = lenDeletedList * 1
                             temp = await app.send_message(
                                 message.chat.id,
-                                f"🧭 | ᴛᴏᴛᴀʟ ᴏғ {lenDeletedList} ᴅᴇʟᴇᴛᴇᴅ ᴀᴄᴄᴏᴜɴᴛs ʜᴀs ʙᴇᴇɴ ᴅᴇᴛᴇᴄᴛᴇᴅ.\n🥀 | ᴇsᴛɪᴍᴀᴛᴇᴅ ᴛɪᴍᴇ: {processTime} sᴇᴄᴏɴᴅs ғʀᴏᴍ ɴᴏᴡ.",
+                                f"🧭 | 𝙏𝙤𝙥𝙡𝙖𝙢 {lenDeletedList} 𝙎𝙞𝙡𝙞𝙣𝙚𝙣 𝙃𝙚𝙨𝙖𝙥𝙡𝙖𝙧 𝙆𝙖𝙡𝙙𝙧ı𝙡𝙙ı.\n🥀 | 𝙕𝙖𝙢𝙖𝙣: {processTime}.",
                             )
                             if stopProcess:
                                 stopProcess = False
@@ -70,18 +70,18 @@ async def remove(client, message):
                                 k += 1
                             if k == lenDeletedList:
                                 await message.reply(
-                                    f"✅ | ʙᴀʏᴀɴ ᴅᴇʟᴇᴛᴇᴅ ᴀᴄᴄᴏᴜɴᴛs ᴅᴇʟᴇᴛᴇᴅ ᴏʟᴜʏᴏʀ."
+                                    f"✅ | 𝙎𝙞𝙡𝙞𝙣𝙚𝙣 𝙃𝙚𝙨𝙖𝙥𝙡𝙖𝙧 𝙔𝙖𝙨𝙖𝙠𝙡𝙖𝙣𝙙ı."
                                 )
                                 await temp.delete()
                             else:
                                 await message.reply(
-                                    f"✅ | ʙᴀʏᴀɴ {k} ᴅᴇʟᴇᴛᴇᴅ ᴀᴄᴄᴏᴜɴᴛs ᴅᴇʟᴇᴛᴇᴅ ᴏʟᴜʏᴏʀ."
+                                    f"✅ | 𝙎𝙞𝙡𝙞𝙣𝙚𝙣 𝙃𝙚𝙨𝙖𝙥 {k} 𝙔𝙖𝙨𝙖𝙠𝙡𝙖𝙣𝙙ı."
                                 )
                                 await temp.delete()
                             chatQueue.remove(message.chat.id)
         else:
             await message.reply(
-                "👮🏻 | ᴏʟᴍᴀᴅɪ, **sᴏʀʀʏ, ᴏɴʟʏ ᴀᴅᴍɪɴ** ᴄᴀɴ ᴇxᴇᴄᴜᴛᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ."
+                "👮🏻 | ᴏʟᴍᴀᴅɪ, **𝙎𝙖𝙙𝙚𝙘𝙚 𝙔𝙤̈𝙣𝙚𝙩𝙞𝙘𝙞𝙡𝙚𝙧**"
             )
     except FloodWait as e:
         await asyncio.sleep(e.value)
