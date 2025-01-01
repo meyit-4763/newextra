@@ -37,4 +37,4 @@ __HELP__ = """
 `/tts` komutundan sonra bir metin sağladığınızdan emin olun.
 """
 
-__MODULE__ = "Tᴛs"
+__MODULE__ = "𝙏𝙏𝙎"
