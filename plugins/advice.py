@@ -10,6 +10,6 @@ async def advice(_, message):
     await A.edit(res)
 
 
-__MODULE__ = "Aᴅᴠɪᴄᴇ"
+__MODULE__ = "𝙏𝙖𝙫𝙨𝙞𝙮𝙚"
 __HELP__ = """
 /tavsiye - Rastgele tavsiye al"""
