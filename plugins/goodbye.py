@@ -258,7 +258,7 @@ async def get_goodbye_func(_, message):
     )
 
 
-__MODULE__ = "Veda"
+__MODULE__ = "𝙑𝙀𝘿𝘼"
 __HELP__ = """
 **Veda Mesajı Yönetimi:**
 
