@@ -20,8 +20,8 @@ def figle(text):
     keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton(text="Font Değiştir", callback_data="figlet"),  # Font değiştirme butonu
-                InlineKeyboardButton(text="Kapat", callback_data="close_reply"),  # Kapatma butonu
+                InlineKeyboardButton(text="〆 𝙁𝙤𝙣𝙩 𝘿𝙚𝙜̆𝙞𝙨̧𝙩𝙞𝙧 〆", callback_data="figlet"),  # Font değiştirme butonu
+                InlineKeyboardButton(text="〆 𝙆𝙖𝙥𝙖𝙩 〆", callback_data="close_reply"),  # Kapatma butonu
             ]
         ]
     )
@@ -34,10 +34,10 @@ async def echo(bot, message):
     try:
         text = message.text.split(" ", 1)[1]  # Kullanıcının girdiği metni al
     except IndexError:
-        return await message.reply_text("Örnek:\n\n`/figlet Yukki `")  # Hata mesajı
+        return await message.reply_text("𝙊̈𝙧𝙣𝙚𝙠:\n\n`/figlet 𝙈𝙮𝙩 `")  # Hata mesajı
     kul_text, keyboard = figle(text)  # Figlet metnini oluştur
     await message.reply_text(
-        f"İşte figlet'iniz:\n<pre>{kul_text}</pre>",
+        f"𝙄̇𝙨̧𝙩𝙚 𝙛𝙞𝙜𝙡𝙚𝙩:\n<pre>{kul_text}</pre>",
         quote=True,
         reply_markup=keyboard,  # Klavye ile birlikte mesajı gönder
     )
@@ -48,8 +48,8 @@ async def figlet_handler(Client, query: CallbackQuery):
     try:
         kul_text, keyboard = figle(text)  # Figlet metnini yeniden oluştur
         await query.message.edit_text(
-            f"İşte figlet'iniz:\n<pre>{kul_text}</pre>", reply_markup=keyboard  # Mesajı güncelle
-        )
+            f"𝙄̇𝙨̧𝙩𝙚 𝙛𝙞𝙜𝙡𝙚𝙩:\n<pre>{kul_text}</pre>", reply_markup=keyboard  # Mesajı güncelle
+        ) 
     except FloodWait as e:
         await asyncio.sleep(e.value)  # FloodWait hatası durumunda bekle
 
@@ -57,9 +57,9 @@ async def figlet_handler(Client, query: CallbackQuery):
         return await query.answer(e, show_alert=True)  # Hata durumunda kullanıcıya mesaj göster
 
 
-__MODULE__ = "Fɪɢʟᴇᴛ"  # Modül adı
+__MODULE__ = "𝙎̧𝙚𝙠𝙞𝙡"  # Modül adı
 __HELP__ = """
-**Figlet**
+**𝙎̧𝙚𝙠𝙞𝙡𝙡𝙞 𝙔𝙖𝙯ı**
 
-• /figlet <metin> - Verilen metnin figlet formatında oluşturulmasını sağlar.
+• /figlet <metin> - 𝙑𝙚𝙧𝙞𝙡𝙚𝙣 𝙢𝙚𝙩𝙣𝙞𝙣 𝙛𝙞𝙜𝙡𝙚𝙩 𝙛𝙤𝙧𝙢𝙖𝙩ı𝙣𝙙𝙖 𝙤𝙡𝙪𝙨̧𝙩𝙪𝙧𝙪𝙡𝙢𝙖𝙨ı𝙣ı 𝙨𝙖𝙜̆𝙡𝙖𝙧.
 """
