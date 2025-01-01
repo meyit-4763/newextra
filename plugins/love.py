@@ -47,7 +47,7 @@ def love_command(client, message):
     app.send_message(message.chat.id, response)
 
 
-__MODULE__ = "Aşk"
+__MODULE__ = "𝘼𝙨̧𝙠"
 __HELP__ = """
 **Aşk Hesaplayıcı:**
 
