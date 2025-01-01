@@ -4,19 +4,19 @@ import re
 from config import BANNED_USERS
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from YukkiMusic import app
-from YukkiMusic.utils.database import (
+from DnsXMusic import app
+from DnsXMusic.utils.database import (
     deleteall_filters,
     get_filter,
     get_filters_names,
     save_filter,
 )
-from YukkiMusic.utils.functions import (
+from DnsXMusic.utils.functions import (
     check_format,
     extract_text_and_keyb,
     get_data_and_name,
 )
-from YukkiMusic.utils.keyboard import ikb
+from DnsXMusic.utils.keyboard import ikb
 
 from utils.error import capture_err
 from utils.permissions import adminsOnly, member_permissions
@@ -24,7 +24,7 @@ from utils.permissions import adminsOnly, member_permissions
 from .notes import extract_urls
 
 
-__MODULE__ = "Filtreler"
+__MODULE__ = "𝙁𝙞𝙡𝙩𝙚𝙧"
 __HELP__ = """/filters Tüm filtreleri almak için.
 /filter [FILTER_NAME] Bir filtre kaydetmek için (bir mesaja yanıt vererek).
 
