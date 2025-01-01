@@ -9,7 +9,7 @@ from YukkiMusic import app
 async def chatgpt_chat(bot, message):
     if len(message.command) < 2 and not message.reply_to_message:
         await message.reply_text(
-            "Örnek:\n\n`/ai basit bir web sitesi kodu yaz html css, js kullanarak?`"
+            "𝙊̈𝙧𝙣𝙚𝙠:\n\n`/ai 𝙗𝙖𝙨𝙞𝙩 𝙗𝙞𝙧 𝙬𝙚𝙗 𝙨𝙞𝙩𝙚𝙨𝙞 𝙠𝙤𝙙𝙪 𝙮𝙖𝙯 𝙝𝙩𝙢𝙡 𝙘𝙨𝙨, 𝙟𝙨 𝙠𝙪𝙡𝙡𝙖𝙣𝙖𝙧𝙖𝙠?`"
         )
         return
 
@@ -23,9 +23,9 @@ async def chatgpt_chat(bot, message):
     await message.reply_text(results)  # Yanıtı gönder
 
 
-__MODULE__ = "CʜᴀᴛGᴘᴛ"  # Modül adı
+__MODULE__ = "𝙂𝙗𝙩"  # Modül adı
 __HELP__ = """
-/advice - Bot tarafından rastgele tavsiye al
-/ai [soru] - ChatGPT'nin AI'si ile sorunu sor
-/gemini [soru] - Google'ın Gemini AI'si ile sorunu sor
+/advice - 𝘽𝙤𝙩 𝙩𝙖𝙧𝙖𝙛ı𝙣𝙙𝙖𝙣 𝙧𝙖𝙨𝙩𝙜𝙚𝙡𝙚 𝙩𝙖𝙫𝙨𝙞𝙮𝙚 𝙖𝙡ı𝙣
+/ai [soru] - 𝘾𝙝𝙖𝙩𝙂𝙋𝙏'𝙣𝙞𝙣 𝘼𝙄 𝙨𝙤𝙧𝙪𝙣𝙪 𝙨𝙤𝙧
+/gemini [soru] - 𝙂𝙤𝙤𝙜𝙡𝙚 𝙂𝙚𝙢𝙞𝙣𝙞 𝘼𝙄 𝙨𝙤𝙧𝙪𝙣𝙪 𝙨𝙤𝙧
 """
