@@ -51,7 +51,7 @@ async def download_instagram_video(client, message):
             return await message.reply_text("Reel indirilirken başarısız olundu.")
 
 
-__MODULE__ = "Reel"
+__MODULE__ = "𝙄̇𝙣𝙨𝙩𝙖"
 __HELP__ = """
 **Instagram Reel İndirici:**
 
