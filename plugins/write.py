@@ -22,7 +22,7 @@ async def write(client, message):
         await nan.edit(str(e))
 
 
-__MODULE__ = "Yaz"
+__MODULE__ = "𝙔𝙖𝙯ı"
 __HELP__ = """
 **KOMUTLAR**:
 - /write: ᴡʀɪᴛᴇ ᴛᴇxᴛ ᴏɴ ᴀɴ ᴄʟᴏᴜᴅ ᴀɴᴅ ɢᴇᴛ ᴀɴ ᴇᴅɪᴛᴇᴅ ᴘʜᴏᴛᴏ.
@@ -35,3 +35,4 @@ __HELP__ = """
 
 **NOT**:
 - En iyi sonuçlar için benimle bir grup sohbetinde doğrudan kullanın.
+"""
