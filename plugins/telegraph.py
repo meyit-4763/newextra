@@ -87,4 +87,4 @@ Bu komutları kullanarak medya dosyalarını Telegrapha yükleyebilirsiniz:
 Yükleme işleminin çalışabilmesi için bir medya dosyasına yanıt vermeniz gerekmektedir.
 """
 
-__MODULE__ = "Tᴇʟᴇɢʀᴀᴘʜ"
+__MODULE__ = "𝙏-𝙂𝙧𝙖𝙥𝙝"
