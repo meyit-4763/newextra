@@ -10,11 +10,11 @@ from pyrogram.types import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,
 )
-from YukkiMusic import app
-from YukkiMusic.misc import SUDOERS
-from YukkiMusic.utils.database import is_gbanned_user
-from YukkiMusic.utils.functions import check_format, extract_text_and_keyb
-from YukkiMusic.utils.keyboard import ikb
+from DnsXMusic import app
+from DnsXMusic.misc import SUDOERS
+from DnsXMusic.utils.database import is_gbanned_user
+from DnsXMusic.utils.functions import check_format, extract_text_and_keyb
+from DnsXMusic.utils.keyboard import ikb
 
 from utils import del_welcome, get_welcome, set_welcome
 from utils.error import capture_err
