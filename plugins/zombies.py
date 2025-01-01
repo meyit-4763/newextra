@@ -86,7 +86,7 @@ async def remove(client, message):
     except FloodWait as e:
         await asyncio.sleep(e.value)
 
-__MODULE__ = "Zᴏᴍʙɪᴇs"
+__MODULE__ = "𝙕𝙤𝙢𝙗𝙞𝙚𝙨"
 __HELP__ = """
 **komutlar:**
 - /zombies: ᴅᴇʟᴇᴛᴇᴅ ᴀᴄᴄᴏᴜɴᴛs ɢʀᴏᴜᴘᴛᴀɴ ᴄᴀᴋᴀʀ.
