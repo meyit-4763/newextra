@@ -8,14 +8,14 @@ from pyrogram.types import (
     InputMediaPhoto,
     Message,
 )
-from YukkiMusic import app
+from DnsXMusic import app
 
 
 # Klavye düzeni
 close_keyboard = InlineKeyboardMarkup(
     [
-        [InlineKeyboardButton(text="Yenile", callback_data="refresh_dog")],
-        [InlineKeyboardButton(text="〆 Kapat 〆", callback_data="close")],
+        [InlineKeyboardButton(text="〆 𝙔𝙚𝙣𝙞𝙡𝙚 〆", callback_data="refresh_dog")],
+        [InlineKeyboardButton(text="〆 𝙆𝙖𝙥𝙖𝙩 〆", callback_data="close")],
     ]
 )
 
@@ -31,7 +31,7 @@ async def dog(c, m: Message):
         else:
             await m.reply_photo(dog_url, reply_markup=close_keyboard)  # Fotoğrafı gönder
     else:
-        await m.reply_text("Köpek resmi alınamadı 🐕")  # İstek başarısızsa mesaj gönder
+        await m.reply_text("𝙆𝙤̈𝙥𝙚𝙠 𝙧𝙚𝙨𝙢𝙞 𝙖𝙡ı𝙣𝙖𝙢𝙖𝙙ı 🐕")  # İstek başarısızsa mesaj gönder
 
 
 @app.on_callback_query(filters.regex("refresh_dog") & ~BANNED_USERS)
@@ -48,4 +48,4 @@ async def refresh_dog(c, m: CallbackQuery):
                 reply_markup=close_keyboard,
             )
     else:
-        await m.edit_message_text("Köpek resmi yenilenemedi 🐕")  # İstek başarısızsa mesaj gönder
+        await m.edit_message_text("𝙆𝙤̈𝙥𝙚𝙠 𝙧𝙚𝙨𝙢𝙞 𝙮𝙚𝙣𝙞𝙡𝙚𝙣𝙚𝙢𝙚𝙙𝙞 🐕")  # İstek başarısızsa mesaj gönder
