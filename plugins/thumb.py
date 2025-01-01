@@ -65,4 +65,4 @@ Bu komutları kullanarak bir YouTube videosunun küçük resmini alabilirsiniz:
 Geçerli bir YouTube URL'si sağlamanız gerekmektedir.
 """
 
-__MODULE__ = "Yᴛʜᴜᴍʙ"
+__MODULE__ = "𝙔𝙩-𝙃𝙪𝙢𝙗"
