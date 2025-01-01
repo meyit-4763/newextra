@@ -1,9 +1,9 @@
 from pyrogram import filters
 from pyrogram.enums import ChatType
 from strings import get_string
-from YukkiMusic import app
-from YukkiMusic.utils import Yukkibin
-from YukkiMusic.utils.database import get_assistant, get_lang
+from DnsXMusic import app
+from DnsXMusic.utils import Yukkibin
+from DnsXMusic.utils.database import get_assistant, get_lang
 
 
 @app.on_message(
@@ -14,7 +14,7 @@ async def vc_members(client, message):
         language = await get_lang(message.chat.id)
         _ = get_string(language)
     except BaseException:
-        _ = get_string("en")
+        _ = get_string("tr")
     msg = await message.reply_text(_["V_C_1"])
     userbot = await get_assistant(message.chat.id)
     TEXT = ""
