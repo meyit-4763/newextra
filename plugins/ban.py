@@ -392,7 +392,7 @@ async def demote(_, message: Message):
             await message.reply_text(f"𝙏𝙚𝙧𝙛𝙞 𝙚𝙩𝙩𝙞𝙧𝙞𝙡𝙙𝙞! {umention}")
         else:
             await message.reply_text("𝘽𝙖𝙝𝙨𝙚𝙩𝙩𝙞𝙜̆𝙞𝙣𝙞𝙯 𝙠𝙞𝙨̧𝙞 𝙮𝙤̈𝙣𝙚𝙩𝙞𝙘𝙞 𝙙𝙚𝙜̆𝙞𝙡.") 
-        except Exception as e:
+    except Exception as e:
         await message.reply_text(e)
 
 # Pin Messages
