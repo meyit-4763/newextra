@@ -397,14 +397,12 @@ async def demote(_, message: Message):
 
 # Pin Messages
 
-
-
 @app.on_message(filters.command(["unpinall"]) & filters.group & ~BANNED_USERS)
 @adminsOnly("can_pin_messages")
 async def pin(_, message: Message):
     if message.command[0] == "unpinall":
         return await message.reply_text(
-            "𝙏𝙪̈𝙢 𝙢𝙚𝙨𝙖𝙟𝙡𝙖𝙧ı 𝙨𝙖𝙗𝙞𝙩𝙩𝙚𝙣 𝙠𝙖𝙡𝙙ı𝙧𝙢𝙖𝙠 𝙞𝙨𝙩𝙚𝙙𝙞𝙜̆𝙞𝙣𝙞𝙯𝙚 𝙚𝙢𝙞𝙣 𝙢𝙞𝙨𝙞𝙣𝙞𝙯??",
+            "𝙏𝙪̈𝙢 𝙢𝙚𝙨𝙖𝙟𝙡𝙖𝙧ı 𝙨𝙖𝙗𝙞𝙩𝙩𝙚𝙣 𝙠𝙖𝙡𝙙ı𝙧𝙢𝙖𝙠 𝙞𝙨𝙩𝙚𝙙𝙞𝙜̆𝙞𝙣𝙞𝙯𝙚 𝙚𝙢𝙞𝙣 𝙢𝙞𝙨𝙞𝙣𝙞𝙯?",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -420,11 +418,13 @@ async def pin(_, message: Message):
 async def callback_query_handler(_, query: CallbackQuery):
     if query.data == "unpin_yes":
         await app.unpin_all_chat_messages(query.message.chat.id)
-        return await query.message.edit_text("𝙏𝙪̈𝙢 𝙨𝙖𝙗𝙞𝙩𝙡𝙚𝙣𝙢𝙞𝙨̧ 𝙢𝙚𝙨𝙖𝙟𝙡𝙖𝙧 𝙠𝙖𝙡𝙙ı𝙧ı𝙡𝙙ı")
+        return await query.message.edit_text("𝙏𝙪̈𝙢 𝙨𝙖𝙗𝙞𝙩𝙡𝙚𝙣𝙢𝙞𝙨̧ 𝙢𝙚𝙨𝙖𝙟𝙡𝙖𝙧 𝙠𝙖𝙡𝙙ı𝙧ı𝙡𝙙ı.")
     elif query.data == "unpin_no":
         return await query.message.edit_text(
-            "𝙏𝙪̈𝙢 𝙨𝙖𝙗𝙞𝙩𝙡𝙚𝙣𝙢𝙞𝙨̧ 𝙢𝙚𝙨𝙖𝙟𝙡𝙖𝙧ı𝙣 𝙠𝙖𝙡𝙙ı𝙧ı𝙡𝙢𝙖𝙨ı 𝙞𝙥𝙩𝙖𝙡 𝙚𝙙𝙞𝙡𝙙𝙞.."
+            "𝙏𝙪̈𝙢 𝙨𝙖𝙗𝙞𝙩𝙡𝙚𝙣𝙢𝙞𝙨̧ 𝙢𝙚𝙨𝙖𝙟𝙡𝙖𝙧ı𝙣 𝙠𝙖𝙡𝙙ı𝙧ı𝙡𝙢𝙖𝙨ı 𝙞𝙥𝙩𝙖𝙡 𝙚𝙙𝙞𝙡𝙙𝙞."
         )
+
+
 
 
 @app.on_message(filters.command(["pin", "unpin"]) & ~filters.private & ~BANNED_USERS)
@@ -442,7 +442,7 @@ async def pin(_, message: Message):
     await message.reply(
         f"Sabitlenmiş [this]({r.link}) mesaj.") 
         disable_web_page_preview=True,
-    msg = "𝙇𝙪̈𝙩𝙛𝙚𝙣 𝙨𝙖𝙗𝙞𝙩𝙡𝙚𝙣𝙢𝙞𝙨̧ 𝙢𝙚𝙨𝙖𝙟ı 𝙠𝙤𝙣𝙩𝙧𝙤𝙡 𝙚𝙙𝙞𝙣: ~ " + f"[𝙆𝙤𝙣𝙩𝙧𝙤𝙡 𝙚𝙩, {r.link}]"
+    msg = "𝙇𝙪̈𝙩𝙛𝙚𝙣 𝙨𝙖𝙗𝙞𝙩𝙡𝙚𝙣𝙢𝙞𝙨̧ 𝙢𝙚𝙨𝙖𝙟ı 𝙠𝙤𝙣𝙩𝙧𝙤𝙡 𝙚�𝙞𝙣: ~ " + f"[𝙆𝙤𝙣𝙩𝙧𝙤𝙡 𝙚𝙩, {r.link}]"
     filter_ = dict(type="text", data=msg)
     await save_filter(message.chat.id, "~pinned", filter_)
 
