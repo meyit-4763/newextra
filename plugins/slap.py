@@ -21,4 +21,4 @@ __HELP__ = """
 Kullanılabilir komutlar:
 - /slap: Birine tokat atar. Eğer bir yanıt olarak kullanılırsa, yanıt verilen kullanıcıya tokat atar.
 """
-__MODULE__ = "Tokat"
+__MODULE__ = "𝙏𝙤𝙠𝙖𝙩"
