@@ -56,7 +56,7 @@ async def get_id(client, message):
         await message.reply(f"ID'yi alırken bir hata oluştu. {r}")
 
 
-__MODULE__ = "Kullanıcı ID"
+__MODULE__ = "𝙄𝘿"
 __HELP__ = """
 **ID Alıcı:**
 
