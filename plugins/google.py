@@ -27,5 +27,5 @@ async def google(bot, message):
         await b.edit(str(e))  # Hata durumunda hata mesajını göster
 
 
-__MODULE__ = "Google"
+__MODULE__ = "𝙂𝙤𝙤𝙜𝙡𝙚"
 __HELP__ = """/google [sorgu] - Google'da arama yap ve sonuçları getir"""
