@@ -17,7 +17,7 @@ async def huggg(client, message):
         await message.reply_text(f"Hata: {e}")
 
 
-__MODULE__ = "Sarılma"
+__MODULE__ = "𝘼𝙣𝙞𝙢𝙖𝙨𝙮𝙤𝙣"
 __HELP__ = """
 Bu bot aşağıdaki komutlara yanıt verir:
 
