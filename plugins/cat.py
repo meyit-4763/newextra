@@ -14,8 +14,8 @@ from YukkiMusic import app
 # Klavye düzeni
 close_keyboard = InlineKeyboardMarkup(
     [
-        [InlineKeyboardButton(text="Yenile", callback_data="refresh_cat")],
-        [InlineKeyboardButton(text="〆 Kapat 〆", callback_data="close")],
+        [InlineKeyboardButton(text="〆 𝙔𝙚𝙣𝙞𝙡𝙚 〆", callback_data="refresh_cat")],
+        [InlineKeyboardButton(text="〆 𝙆𝙖𝙥𝙖𝙩 〆", callback_data="close")],
     ]
 )
 
@@ -33,7 +33,7 @@ async def cat(c, m: Message):
         else:  # Eğer resim bir fotoğraf ise
             await m.reply_photo(cat_url, caption="miyav", reply_markup=close_keyboard)
     else:  # İstek başarısızsa
-        await m.reply_text("Kedi resmi alınamadı 🙀")
+        await m.reply_text("𝙆𝙚𝙙𝙞 𝙧𝙚𝙨𝙢𝙞 𝙖𝙡ı𝙣𝙖𝙢𝙖𝙙ı 🙀")
 
 
 @app.on_callback_query(filters.regex("refresh_cat") & ~BANNED_USERS)
@@ -52,4 +52,4 @@ async def refresh_cat(c, m: CallbackQuery):
                 reply_markup=close_keyboard,
             )
     else:  # İstek başarısızsa
-        await m.edit_message_text("Kedi resmi yenilenemedi 🙀")
+        await m.edit_message_text("𝙆𝙚𝙙𝙞 𝙧𝙚𝙨𝙢𝙞 𝙮𝙚𝙣𝙞𝙡𝙚𝙣𝙚𝙢𝙚𝙙𝙞 🙀")
