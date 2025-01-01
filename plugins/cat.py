@@ -8,7 +8,7 @@ from pyrogram.types import (
     InputMediaPhoto,
     Message,
 )
-from YukkiMusic import app
+from DnsXMusic import app
 
 
 # Klavye düzeni
