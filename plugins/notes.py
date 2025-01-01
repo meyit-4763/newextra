@@ -383,7 +383,7 @@ async def delete_all_cb(_, cb):
         await cb.message.delete()
 
 
-__MODULE__ = "Notlar"
+__MODULE__ = "𝙉𝙤𝙩𝙡𝙖𝙧"
 __HELP__ = """
 **Notlar:**
 
