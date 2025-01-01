@@ -1,6 +1,6 @@
 from googlesearch import search
 from pyrogram import filters
-from YukkiMusic import app
+from DnsXMusic import app
 
 
 @app.on_message(filters.command(["google", "gle"]))
