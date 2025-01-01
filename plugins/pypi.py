@@ -48,7 +48,7 @@ async def pypi_info_command(client, message):
         )
 
 
-__MODULE__ = "Pʏᴘɪ"
+__MODULE__ = "𝙋𝙮𝙋𝙞"
 __HELP__ = """
 **Komutlar:**
 • /pypi <paket_adı>: Belirtilen Python paketinin PyPI'den detaylarını alın.
