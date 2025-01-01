@@ -31,7 +31,7 @@ def smallcap(text):
     return text.translate(trans_table)
 
 
-@app.on_message(filters.command("autoapprove") & filters.group)
+@app.on_message(filters.command("otoonay") & filters.group)
 @adminsOnly("can_change_info")
 async def approval_command(client, message):
     chat_id = message.chat.id
@@ -47,23 +47,23 @@ async def approval_command(client, message):
             )
         if mode == "automatic":
             switch = "manual"
-            mdbutton = "ᴀᴜᴛᴏᴍᴀᴛɪᴄ"
+            mdbutton = "𝙊𝙩𝙤𝙢𝙖𝙩𝙞𝙠"
         else:
             switch = "automatic"
-            mdbutton = "ᴍᴀɴɴᴜᴀʟ"
+            mdbutton = "𝙈𝙖𝙣𝙪𝙚𝙡"
         buttons = {
-            "Tᴜʀɴ ᴏғғ": "approval_off",
+            "𝙆𝙖𝙥𝙖𝙡ı": "approval_off",
             f"{mdbutton}": f"approval_{switch}",
         }
         keyboard = ikb(buttons, 1)
         await message.reply(
-            "**Otomatik Onay Bu sohbet için: Etkin.**", reply_markup=keyboard
+            "**𝙊𝙩𝙤𝙢𝙖𝙩𝙞𝙠 𝙊𝙣𝙖𝙮 𝘽𝙪 𝙨𝙤𝙝𝙗𝙚𝙩 𝙞𝙘̧𝙞𝙣: 𝙀𝙩𝙠𝙞𝙣.**", reply_markup=keyboard
         )
     else:
-        buttons = {"Tᴜʀɴ ᴏɴ ": "approval_on"}
+        buttons = {"𝘼𝙘̧ı𝙠 ": "approval_on"}
         keyboard = ikb(buttons, 1)
         await message.reply(
-            "**Otomatik Onay Bu sohbet için: Devre Dışı.**", reply_markup=keyboard
+            "**𝙊𝙩𝙤𝙢𝙖𝙩𝙞𝙠 𝙊𝙣𝙖𝙮 𝘽𝙪 𝙨𝙤𝙝𝙗𝙚𝙩 𝙞𝙘̧𝙞𝙣: 𝘿𝙚𝙫𝙧𝙚 𝘿ı𝙨̧ı.**", reply_markup=keyboard
         )
 
 
@@ -76,7 +76,7 @@ async def approval_cb(client, cb):
     if permission not in permissions:
         if from_user.id not in SUDOERS:
             return await cb.answer(
-                f"Gerekli izne sahip değilsiniz.\n İzin: {permission}",
+                f"𝙂𝙚𝙧𝙚𝙠𝙡𝙞 𝙞𝙯𝙣𝙚 𝙨𝙖𝙝𝙞𝙥 𝙙𝙚𝙜̆𝙞𝙡𝙨𝙞𝙣𝙞𝙯\n 𝙄̇𝙯𝙞𝙣: {permission}",
                 show_alert=True,
             )
     command_parts = cb.data.split("_", 1)
@@ -87,7 +87,7 @@ async def approval_cb(client, cb):
             buttons = {"ᴛᴜʀɴ ᴏɴ": "approval_on"}
             keyboard = ikb(buttons, 1)
             return await cb.edit_message_text(
-                "**Aᴜᴛᴏᴀᴘᴘʀᴏᴠᴀʟ ғᴏʀ ᴛʜɪs ᴄʜᴀᴛ: Dɪsᴀʙʟᴇᴅ.**",
+                "**𝙊𝙩𝙤𝙢𝙖𝙩𝙞𝙠 𝙤𝙣𝙖𝙮 𝙗𝙪 𝙨𝙤𝙝𝙗𝙚𝙩 𝙞𝙘̧𝙞𝙣: 𝘿𝙚𝙫𝙧𝙚 𝘿ı𝙨̧ı**",
                 reply_markup=keyboard,
             )
     if option == "on":
@@ -106,27 +106,27 @@ async def approval_cb(client, cb):
     )
     chat = await approvaldb.find_one({"chat_id": chat_id})
     mode = smallcap(chat["mode"])
-    buttons = {"ᴛᴜʀɴ ᴏғғ": "approval_off", f"{mode}": f"approval_{switch}"}
+    buttons = {"𝙆𝙖𝙥𝙖𝙡ı": "approval_off", f"{mode}": f"approval_{switch}"}
     keyboard = ikb(buttons, 1)
     await cb.edit_message_text(
-        "**Otomatik Onay Bu sohbet için: Etkin.**", reply_markup=keyboard
+        "**𝙊𝙩𝙤𝙢𝙖𝙩𝙞𝙠 𝙊𝙣𝙖𝙮 𝘽𝙪 𝙨𝙤𝙝𝙗𝙚𝙩 𝙞𝙘̧𝙞𝙣: 𝙀𝙩𝙠𝙞𝙣.**", reply_markup=keyboard
     )
 
 
-@app.on_message(filters.command("approveall") & filters.group)
+@app.on_message(filters.command("fullonay") & filters.group)
 @adminsOnly("can_restrict_members")
 async def clear_pending_command(client, message):
-    a = await message.reply_text("ᴡᴀɪᴛ.....")
+    a = await message.reply_text("𝘽𝙚𝙠𝙡𝙚𝙮𝙞𝙣....")
     chat_id = message.chat.id
     await app.approve_all_chat_join_requests(chat_id)
-    await a.edit("Eğer herhangi bir kullanıcı onay bekliyorsa, ben onu onaylıyorum.")
+    await a.edit("𝙀𝙜̆𝙚𝙧 𝙝𝙚𝙧𝙝𝙖𝙣𝙜𝙞 𝙗𝙞𝙧 𝙠𝙪𝙡𝙡𝙖𝙣ı𝙘ı 𝙤𝙣𝙖𝙮 𝙗𝙚𝙠𝙡𝙞𝙮𝙤𝙧𝙨𝙖, 𝙗𝙚𝙣 𝙤𝙣𝙪̈ 𝙤𝙣𝙖𝙮𝙡ı𝙮𝙤𝙧𝙪𝙢.")
     await approvaldb.update_one(
         {"chat_id": chat_id},
         {"$set": {"pending_users": []}},
     )
 
 
-@app.on_message(filters.command("clearpending") & filters.group)
+@app.on_message(filters.command("onaysil") & filters.group)
 @adminsOnly("can_restrict_members")
 async def clear_pending_command(client, message):
     chat_id = message.chat.id
@@ -135,9 +135,9 @@ async def clear_pending_command(client, message):
         {"$set": {"pending_users": []}},
     )
     if result.modified_count > 0:
-        await message.reply_text("Bekleyen kullanıcılar temizlendi.")
+        await message.reply_text("𝘽𝙚𝙠𝙡𝙚𝙮𝙚𝙣 𝙠𝙪𝙡𝙡𝙖𝙣ı𝙘ı𝙡𝙖𝙧 𝙩𝙚𝙢𝙞𝙯𝙡𝙚𝙣𝙙𝙞.")
     else:
-        await message.reply_text("Temizlenecek bekleyen kullanıcı yok.")
+        await message.reply_text("𝙏𝙚𝙢𝙞𝙯𝙡𝙚𝙣𝙚𝙘𝙚𝙠 𝙗𝙚𝙠𝙡𝙚𝙮𝙚𝙣 𝙠𝙪𝙡𝙡𝙖𝙣ı𝙘ı 𝙮𝙤𝙠.")
 
 
 @app.on_chat_join_request(filters.group)
@@ -161,11 +161,11 @@ async def accept(client, message: ChatJoinRequest):
                     upsert=True,
                 )
                 buttons = {
-                    "ᴀᴄᴄᴇᴘᴛ": f"manual_approve_{user.id}",
-                    "ᴅᴇᴄʟɪɴᴇ": f"manual_decline_{user.id}",
+                    "𝙆𝙖𝙗𝙪𝙡 𝙚𝙩": f"manual_approve_{user.id}",
+                    "𝙍𝙚𝙙𝙙𝙚𝙩": f"manual_decline_{user.id}",
                 }
                 keyboard = ikb(buttons, int(2))
-                text = f"**Kullanıcı: {user.mention} grubumuza katılmak için bir istek gönderdi. Herhangi bir yönetici bunu kabul edebilir veya reddedebilir.**"
+                text = f"**𝙆𝙪𝙡𝙡𝙖𝙣ı𝙘ı: {user.mention} 𝙜𝙧𝙪𝙗𝙪𝙢𝙪𝙯𝙖 𝙠𝙖𝙩ı𝙡𝙢𝙖𝙠 𝙞𝙘̧𝙞𝙣 𝙗𝙞𝙧 𝙞𝙨𝙩𝙚𝙠 𝙜𝙤̈𝙣𝙙𝙚𝙧𝙙𝙞 𝙃𝙚𝙧𝙝𝙖𝙣𝙜𝙞 𝙗𝙞𝙧 𝙮𝙤̈𝙣𝙚𝙩𝙞𝙘𝙞 𝙗𝙪𝙣𝙪 𝙠𝙖𝙗𝙪𝙡 𝙚𝙙𝙚𝙗𝙞𝙡𝙞𝙧 𝙫𝙚𝙮𝙖 𝙧𝙚𝙙𝙙𝙚𝙙𝙞𝙡𝙚𝙗𝙞𝙡𝙞𝙧.**"
                 admin_data = [
                     i
                     async for i in app.get_chat_members(
@@ -189,7 +189,7 @@ async def manual(app, cb):
     if permission not in permissions:
         if from_user.id not in SUDOERS:
             return await cb.answer(
-                f"Gerekli izne sahip değilsiniz.\n İzin: {permission}",
+                f"𝙂𝙚𝙧𝙚𝙠𝙡𝙞 𝙞𝙯𝙣𝙚 𝙨𝙖𝙝𝙞𝙥 𝙙𝙚𝙜̆𝙞𝙡𝙨𝙞𝙣𝙞𝙯.\n 𝙄̇𝙯𝙞𝙣: {permission}",
                 show_alert=True,
             )
     datas = cb.data.split("_", 2)
@@ -200,7 +200,7 @@ async def manual(app, cb):
             await app.approve_chat_join_request(chat_id=chat.id, user_id=id)
         except UserAlreadyParticipant:
             await cb.answer(
-                "Kullanıcı, grubunuzda herhangi biri tarafından onaylandı.",
+                "𝙆𝙪𝙡𝙡𝙖𝙣ı𝙘ı, 𝙜𝙧𝙪𝙗𝙪𝙣𝙪𝙯𝙙𝙖 𝙝𝙚𝙧𝙝𝙖𝙣𝙜𝙞 𝙗𝙞𝙧𝙞 𝙩𝙖𝙧𝙖𝙛ı𝙣𝙙𝙖𝙣 𝙤𝙣𝙖𝙮𝙡𝙖𝙣𝙙ı.",
                 show_alert=True,
             )
             return await cb.message.delete()
@@ -211,7 +211,7 @@ async def manual(app, cb):
         except Exception as e:
             if "messages.HideChatJoinRequest" in str(e):
                 await cb.answer(
-                    "Kullanıcı, grubunuzda herhangi biri tarafından onaylandı.",
+                    "𝙆𝙪𝙡𝙡𝙖𝙣ı𝙘ı, 𝙜𝙧𝙪𝙗𝙪𝙣𝙪𝙯𝙙𝙖 𝙝𝙚𝙧𝙝𝙖𝙣𝙜𝙞 𝙗𝙞𝙧𝙞 𝙩𝙖𝙧𝙖𝙛ı𝙣𝙙𝙖𝙣 𝙤𝙣𝙖𝙮𝙡𝙖𝙣𝙙ı.",
                     show_alert=True,
                 )
 
@@ -222,17 +222,17 @@ async def manual(app, cb):
     return await cb.message.delete()
 
 
-__MODULE__ = "Aᴘᴘʀᴏᴠᴇ"
+__MODULE__ = "𝙊𝙣𝙖𝙮"
 __HELP__ = """
-command: /autoapprove
+𝙆𝙤𝙢𝙪𝙩: /otoonay
 
-Bu modül, bir kullanıcı tarafından grubunuzun davet bağlantısı aracılığıyla gönderilen sohbet katılma isteklerini otomatik olarak kabul etmeye yardımcı olur.
+𝘽𝙪 𝙢𝙤𝙙𝙪̈𝙡, 𝙗𝙞𝙧 𝙠𝙪𝙡𝙡𝙖𝙣ı𝙘ı 𝙩𝙖𝙧𝙖𝙛ı𝙣𝙙𝙖𝙣 𝙜𝙧𝙪𝙗𝙪𝙣𝙪𝙯𝙪𝙣 𝙙𝙖𝙫𝙚𝙩 𝙗𝙖𝙜̆𝙡𝙖𝙣𝙩ı𝙨ı 𝙖𝙧𝙖𝙘ı𝙡ı𝙜̆ı𝙮𝙡𝙖 𝙜𝙤̈𝙣𝙙𝙚𝙧𝙞𝙡𝙚𝙣 𝙨𝙤𝙝𝙗𝙚𝙩 𝙠𝙖𝙩ı𝙡𝙢𝙖 𝙞𝙨𝙩𝙚𝙠𝙡𝙚𝙧𝙞𝙣𝙞 𝙤𝙩𝙤𝙢𝙖𝙩𝙞𝙠 𝙤𝙡𝙖𝙧𝙖𝙠 𝙠𝙖𝙗𝙪𝙡 𝙚𝙩𝙢𝙚𝙮𝙚 𝙮𝙖𝙧𝙙ı𝙢𝙘ı 𝙤𝙡𝙪𝙧.
 
-Modlar: /autoapprove komutunu grubunuzda gönderdiğinizde, otomatik onay etkin değilse "butonu aç" mesajını göreceksiniz. Eğer zaten etkinse, aşağıda belirtilen iki moddan birini göreceksiniz ve kullanımı hakkında bilgi alacaksınız.
+𝙈𝙤𝙙𝙡𝙖𝙧: /otoonay 𝙠𝙤𝙢𝙪𝙩𝙪𝙣𝙪 𝙜𝙧𝙪𝙗𝙪𝙣𝙪𝙯𝙙𝙖 𝙜𝙤̈𝙣𝙙𝙚𝙧𝙙𝙞𝙜̆𝙞𝙣𝙞𝙯𝙙𝙚, 𝙤𝙩𝙤𝙢𝙖𝙩𝙞𝙠 𝙤𝙣𝙖𝙮 𝙚𝙩𝙠𝙞𝙣 𝙙𝙚𝙜̆𝙞𝙡𝙨𝙚 "𝙖𝙘̧" 𝙢𝙚𝙨𝙖𝙟ı𝙣ı 𝙜𝙤̈𝙧𝙚𝙘𝙚𝙠𝙨𝙞𝙣𝙞𝙯. 𝙀𝙜̆𝙚𝙧 𝙯𝙖𝙩𝙚𝙣 𝙚𝙩𝙠𝙞𝙣𝙨𝙚, 𝙖𝙨̧𝙖𝙜̆ı𝙙𝙖 𝙗𝙚𝙡𝙞𝙧𝙩𝙞𝙡𝙚𝙣 𝙞𝙠𝙞 𝙢𝙤𝙙𝙙𝙖𝙣 𝙗𝙞𝙧𝙞𝙣𝙞 𝙜𝙤̈𝙧𝙚𝙘𝙚𝙠𝙨𝙞𝙣𝙞𝙯 𝙫𝙚 𝙠𝙪𝙡𝙡𝙖𝙣ı𝙢ı 𝙝𝙖𝙠𝙠ı𝙣𝙙𝙖 𝙗𝙞𝙡𝙜𝙞 𝙖𝙡𝙖𝙘𝙖𝙠𝙨ı𝙣ı𝙯.
 
-¤ Otomatik - Sohbet katılma isteklerini otomatik olarak kabul eder.
+¤ 𝙊𝙩𝙤𝙢𝙖𝙩𝙞𝙠 - 𝙎𝙤𝙝𝙗𝙚𝙩 𝙠𝙖𝙩ı𝙡𝙢𝙖 𝙞𝙨𝙩𝙚𝙠𝙡𝙚𝙧𝙞𝙣𝙞 𝙤𝙩𝙤𝙢𝙖𝙩𝙞𝙠 𝙤𝙡𝙖𝙧𝙖𝙠 𝙠𝙖𝙗𝙪𝙡 𝙚𝙙𝙚𝙧.
 
-¤ Manuel - Yöneticileri etiketleyerek sohbete bir mesaj gönderilecektir. Yöneticiler, istekleri kabul edebilir veya reddedebilir.
+¤ 𝙈𝙖𝙣𝙪𝙚𝙡 - 𝙔𝙤̈𝙣𝙚𝙩𝙞𝙘𝙞𝙡𝙚𝙧𝙞 𝙚𝙩𝙞𝙠𝙚𝙩𝙡𝙚𝙮𝙚𝙧𝙚𝙠 𝙨𝙤𝙝𝙗𝙚𝙩𝙚 𝙗𝙞𝙧 𝙢𝙚𝙨𝙖𝙟 𝙜𝙤̈𝙣𝙙𝙚𝙧𝙞𝙡𝙚𝙘𝙚𝙠𝙩𝙞𝙧. 𝙔𝙤̈𝙣𝙚𝙩𝙞𝙘𝙞𝙡𝙚𝙧, 𝙞𝙨𝙩𝙚𝙠𝙡𝙚𝙧𝙞 𝙠𝙖𝙗𝙪𝙡 𝙚𝙙𝙚𝙗𝙞𝙡𝙞𝙧 𝙫𝙚𝙮𝙖 𝙧𝙚𝙙𝙙𝙚𝙙𝙚𝙗𝙞𝙡𝙞𝙧.
 
-Kullanım: /clearpending komutunu kullanarak tüm bekleyen kullanıcıları veritabanından kaldırabilirsiniz. Bu, kullanıcının tekrar istek göndermesine olanak tanır.
+𝙆𝙪𝙡𝙡𝙖𝙣ı𝙢: /onaysil 𝙠𝙤𝙢𝙪𝙩𝙪𝙣𝙪 𝙠𝙪𝙡𝙡𝙖𝙣𝙖𝙧𝙖𝙠 𝙩𝙪̈𝙢 𝙗𝙚𝙠𝙡𝙚𝙮𝙚𝙣 𝙠𝙪𝙡𝙡𝙖𝙣ı𝙘ı𝙡𝙖𝙧ı 𝙫𝙚𝙧𝙞𝙩𝙖𝙗𝙖𝙣ı𝙣𝙙𝙖𝙣 𝙠𝙖𝙡𝙙ı𝙧𝙖𝙗𝙞𝙡𝙞𝙧𝙨𝙞𝙣𝙞𝙯. 𝘽𝙪, 𝙠𝙪𝙡𝙡𝙖𝙣ı𝙘ı𝙣ı𝙣 𝙩𝙚𝙠𝙧𝙖𝙧 𝙞𝙨𝙩𝙚𝙠 𝙜𝙤̈𝙣𝙙𝙚𝙧𝙢𝙚𝙨𝙞𝙣𝙚 𝙤𝙡𝙖𝙣𝙖𝙠 𝙩𝙖𝙣ı𝙧.
 """
