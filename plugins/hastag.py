@@ -14,7 +14,7 @@ async def hastag(bot, message):
     await message.reply_text(f"İşte sizin hashtag'iniz:\n<pre>{res}</pre>", quote=True)  # Hashtagleri kullanıcıya gönder
 
 
-__MODULE__ = "Hashtag"
+__MODULE__ = "𝙃𝙖𝙨𝙝𝙩𝙖𝙜"
 __HELP__ = """
 **Hashtag Üretici:**
 
