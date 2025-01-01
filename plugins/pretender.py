@@ -152,7 +152,7 @@ async def set_mataa(_, message: Message):
         await message.reply("**Tespit edilen sahte kullanım:\n/pretender on|off**")
 
 
-__MODULE__ = "Sahte Kullanım"
+__MODULE__ = "𝙎𝙖𝙝𝙩𝙚 𝙆𝙪𝙡𝙡𝙖𝙣ı𝙘ı"
 __HELP__ = """
 /pretender - [Aç / Kapat] - Sohbetiniz için sahte kullanım özelliğini açmak veya kapatmak için. Eğer herhangi bir kullanıcı adını, ismini veya biyografisini değiştirirse, bot mesajı sohbetinize gönderecektir.
 """
