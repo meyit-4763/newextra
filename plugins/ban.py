@@ -392,36 +392,37 @@ async def demote(_, message: Message):
             await message.reply_text(f"𝙏𝙚𝙧𝙛𝙞 𝙚𝙩𝙩𝙞𝙧𝙞𝙡𝙙𝙞! {umention}")
         else:
             await message.reply_text("𝘽𝙖𝙝𝙨𝙚𝙩𝙩𝙞𝙜̆𝙞𝙣𝙞𝙯 𝙠𝙞𝙨̧𝙞 𝙮𝙤̈𝙣𝙚𝙩𝙞𝙘𝙞 𝙙𝙚𝙜̆𝙞𝙡.") 
+        except Exception as e:
         await message.reply_text(e)
 
-
 # Pin Messages
+
 
 @app.on_message(filters.command(["unpinall"]) & filters.group & ~BANNED_USERS)
 @adminsOnly("can_pin_messages")
 async def pin(_, message: Message):
     if message.command[0] == "unpinall":
         return await message.reply_text(
-            "Aʀᴇ ʏᴏᴜ sᴜʀᴇ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴜɴᴘɪɴ ᴀʟʟ ᴍᴇssᴀɢᴇs?",
+            "𝙏𝙪̈𝙢 𝙢𝙚𝙨𝙖𝙟𝙡𝙖𝙧ı 𝙨𝙖𝙗𝙞𝙩𝙩𝙚𝙣 𝙠𝙖𝙡𝙙ı𝙧𝙢𝙖𝙠 𝙞𝙨𝙩𝙚𝙙𝙞𝙜̆𝙞𝙣𝙞𝙯𝙚 𝙚𝙢𝙞𝙣 𝙢𝙞𝙨𝙞𝙣𝙞𝙯?",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="ʏᴇs", callback_data="unpin_yes"),
-                        InlineKeyboardButton(text="ɴᴏ", callback_data="unpin_no"),
+                        InlineKeyboardButton(text="𝙀𝙫𝙚𝙩", callback_data="unpin_yes"),
+                        InlineKeyboardButton(text="𝙃𝙖𝙮ı𝙧", callback_data="unpin_no"),
                     ],
                 ]
             ),
-        )
+    )
 
 
 @app.on_callback_query(filters.regex(r"unpin_(yes|no)"))
 async def callback_query_handler(_, query: CallbackQuery):
     if query.data == "unpin_yes":
         await app.unpin_all_chat_messages(query.message.chat.id)
-        return await query.message.edit_text("Aʟʟ ᴘɪɴɴᴇᴅ ᴍᴇssᴀɢᴇs ʜᴀᴠᴇ ʙᴇᴇɴ ᴜɴᴘɪɴɴᴇᴅ.")
+        return await query.message.edit_text("𝙏𝙪̈𝙢 𝙨𝙖𝙗𝙞𝙩𝙡𝙚𝙣𝙢𝙞𝙨̧ 𝙢𝙚𝙨𝙖𝙟𝙡𝙖𝙧 𝙠𝙖𝙡𝙙ı𝙧ı𝙡𝙙ı.")
     elif query.data == "unpin_no":
         return await query.message.edit_text(
-            "Uɴᴘɪɴ ᴏғ ᴀʟʟ ᴘɪɴɴᴇᴅ ᴍᴇssᴀɢᴇs ʜᴀs ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ."
+            "𝙏𝙪̈𝙢 𝙨𝙖𝙗𝙞𝙩𝙡𝙚𝙣𝙢𝙞𝙨̧ 𝙢𝙚𝙨𝙖𝙟𝙡𝙖𝙧ı𝙣 𝙠𝙖𝙡𝙙ı𝙧ı𝙡𝙢𝙖𝙨ı 𝙞𝙥𝙩𝙖𝙡 𝙚𝙙𝙞𝙡𝙙𝙞."
         )
 
 
