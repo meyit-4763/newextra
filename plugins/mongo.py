@@ -30,7 +30,7 @@ async def mongo_command(client, message: Message):
         await message.reply("Ups! MongoDB formatınız geçersiz.")
 
 
-__MODULE__ = "MongoDB"
+__MODULE__ = "𝙈𝙤𝙣𝙜𝙤𝘿𝘽"
 __HELP__ = """
 **MongoDB Kontrol Aracı:**
 
