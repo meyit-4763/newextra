@@ -194,5 +194,5 @@ async def radio(client, message: Message):
         )
 
 
-__MODULE__ = "Rᴀᴅɪᴏ"
+__MODULE__ = "𝙍𝙖𝙙𝙮𝙤"
 __HELP__ = f"\n/radio [istasyon adı] - **Sesli sohbette radyo çalmak için**\n\nAşağıda bazı istasyon adları bulunmaktadır:\n{valid_stations}"
