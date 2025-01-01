@@ -50,7 +50,7 @@ def web_download(client, message):
         message.reply_document(document="website.txt", caption=f"{url} adresinin kaynak kodu.")
 
 
-__MODULE__ = "Wᴇʙᴅʟ"
+__MODULE__ = "𝙒𝙚𝙗𝘿𝙇"
 __HELP__ = """
 **KOMUT:**
 
