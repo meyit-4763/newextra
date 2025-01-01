@@ -397,9 +397,10 @@ async def demote(_, message: Message):
 
 # Pin Messages
 
-@app.on_message(filters.command(["unpinall"]) & filters.group & ~BANNED_USERS)
-@adminsOnly("can_pin_messages")
-async def pin(_, message: Message):
+@app.on_message(filters.command(["unpinall"]) & filters.group)
+async def unpin_all(client, message):
+    if message.from_user.id not in BANNED_USERS:
+        # Unpin all logic here
     if message.command[0] == "unpinall":
         return await message.reply_text(
             "𝙏𝙪̈𝙢 𝙢𝙚𝙨𝙖𝙟𝙡𝙖𝙧ı 𝙨𝙖𝙗𝙞𝙩𝙩𝙚𝙣 𝙠𝙖𝙡𝙙ı𝙧𝙢𝙖𝙠 𝙞𝙨𝙩𝙚𝙙𝙞𝙜̆𝙞𝙣𝙞𝙯𝙚 𝙚𝙢𝙞𝙣 𝙢𝙞𝙨𝙞𝙣𝙞𝙯?",
