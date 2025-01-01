@@ -304,7 +304,7 @@ async def kang(client, message: Message):
         await message.reply_text("Çıkartma png boyutları geçersiz.")
 
 
-__MODULE__ = "Sᴛɪᴄᴋᴇʀ"
+__MODULE__ = "𝙎𝙩𝙞𝙘𝙠𝙚𝙧"
 __HELP__ = """
 **KOMUTLAR:**
 
