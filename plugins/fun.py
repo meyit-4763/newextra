@@ -7,12 +7,12 @@ from YukkiMusic import app
 @app.on_message(
     filters.command(
         [
-            "dice",
+            "zar",
             "ludo",
             "dart",
             "basket",
             "basketball",
-            "football",
+            "futbol",
             "slot",
             "bowling",
             "jackpot",
@@ -21,9 +21,9 @@ from YukkiMusic import app
 )
 async def dice(c, m: Message):
     command = m.text.split()[0]
-    if command == "/dice" or command == "/ludo":
+    if command == "/zar" or command == "/ludo":
         keyboard = InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔄", callback_data="send_dice")]]
+            [[InlineKeyboardButton("〆 Yeniden", callback_data="send_dice")]]
         )
         value = await c.send_dice(m.chat.id, reply_markup=keyboard)
 
@@ -35,7 +35,7 @@ async def dice(c, m: Message):
         basket = await c.send_dice(m.chat.id, emoji="🏀", reply_to_message_id=m.id)
         await basket.reply_text("Skorunuz: {0}".format(basket.dice.value))
 
-    elif command == "/football":
+    elif command == "/futbol":
         value = await c.send_dice(m.chat.id, emoji="⚽", reply_to_message_id=m.id)
         await value.reply_text("Skorunuz: {0}".format(value.dice.value))
 
@@ -74,20 +74,20 @@ async def dice_again(client, query):
     except BaseException:
         pass
     keyboard = InlineKeyboardMarkup(
-        [[InlineKeyboardButton("🔄", callback_data="send_dice")]]
+        [[InlineKeyboardButton("〆 Yeniden", callback_data="send_dice")]]
     )
     await client.send_dice(query.message.chat.id, reply_markup=keyboard)
 
 
-__MODULE__ = "Eğlence"
+__MODULE__ = "𝙀𝙜̆𝙡𝙚𝙣𝙘𝙚"
 __HELP__ = """
 **Eğlenmek için:**
 
-• `/dice`: Bir zar atar.
+• `/zar`: Bir zar atar.
 • `/ludo`: Ludo oynar.
 • `/dart`: Dart atar.
 • `/basket` veya `/basketball`: Basketbol oynar.
-• `/football`: Futbol oynar.
+• `/futbol`: Futbol oynar.
 • `/slot` veya `/jackpot`: Jackpot oynar.
 • `/bowling`: Bowling oynar.
 • `/bored`: Canınız sıkılıyorsa rastgele bir aktivite alır.
