@@ -441,7 +441,6 @@ async def pin(_, message: Message):
     await message.reply(
         f"Sabitlenmiş [this]({r.link}) mesaj.") 
         disable_web_page_preview=True,
-    )
     msg = "𝙇𝙪̈𝙩𝙛𝙚𝙣 𝙨𝙖𝙗𝙞𝙩𝙡𝙚𝙣𝙢𝙞𝙨̧ 𝙢𝙚𝙨𝙖𝙟ı 𝙠𝙤𝙣𝙩𝙧𝙤𝙡 𝙚𝙙𝙞𝙣: ~ " + f"[𝙆𝙤𝙣𝙩𝙧𝙤𝙡 𝙚𝙩, {r.link}]"
     filter_ = dict(type="text", data=msg)
     await save_filter(message.chat.id, "~pinned", filter_)
