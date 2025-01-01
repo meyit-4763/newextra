@@ -36,4 +36,4 @@ async def upscale_reply_image(client, message):
                     await a.delete()
         except Exception as e:
             remove('upscaled.png')
-            await a.edit(e)"""
+            await a.edit(e) 
