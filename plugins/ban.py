@@ -584,6 +584,7 @@ async def remove_warning(_, cq: CallbackQuery):
         return await cq.answer(
             "𝘽𝙪 𝙚𝙮𝙡𝙚𝙢𝙞 𝙜𝙚𝙧𝙘̧𝙚𝙠𝙡𝙚𝙨̧𝙩𝙞𝙧𝙢𝙚𝙠 𝙞𝙘̧𝙞𝙣 𝙮𝙚𝙩𝙚𝙧𝙡𝙞 𝙞𝙯𝙣𝙞𝙣𝙞𝙯 𝙮𝙤𝙠\n.
             + f"𝙄̇𝙯𝙞𝙣 𝙜𝙚𝙧𝙚𝙠𝙡𝙞: {permission}",
+        )
             show_alert=True,
         )
     user_id = cq.data.split("_")[1]
