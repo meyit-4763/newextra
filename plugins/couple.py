@@ -46,7 +46,7 @@ today = get_today_date()
 async def ctest(_, message):
     cid = message.chat.id
     if message.chat.type == ChatType.PRIVATE:
-        return await message.reply_text("Bu komut yalnızca gruplarda çalışır.")
+        return await message.reply_text("𝘽𝙪 𝙠𝙤𝙢𝙪𝙩 𝙮𝙖𝙡𝙣ı𝙯𝙘𝙖 𝙜𝙧𝙪𝙥𝙡𝙖𝙧𝙙𝙖 𝙘̧𝙖𝙡ı𝙨̧ı𝙧.")
 
     p1_path = "downloads/pfp.png"
     p2_path = "downloads/pfp1.png"
@@ -117,11 +117,11 @@ async def ctest(_, message):
             img.save(test_image_path)
 
             TXT = f"""
-**Bugünün Çifti:
+**𝘽𝙪𝙜𝙪̈𝙣𝙪̈𝙣 𝘾̧𝙞𝙛𝙩𝙞:
 
 {N1} + {N2} = 💚
 
-Sonraki çiftler {tomorrow} tarihinde seçilecektir!!**
+𝙎𝙤𝙣𝙧𝙖𝙠𝙞 𝙘̧𝙞𝙛𝙩𝙡𝙚𝙧 {tomorrow} 𝙩𝙖𝙧𝙞𝙝𝙞𝙣𝙙𝙚 𝙨𝙚𝙘̧𝙞𝙡𝙚𝙘𝙚𝙠𝙩𝙞𝙧!!**
             """
             await message.reply_photo(
                 test_image_path,
@@ -130,7 +130,7 @@ Sonraki çiftler {tomorrow} tarihinde seçilecektir!!**
                     [
                         [
                             InlineKeyboardButton(
-                                text="Beni Ekle 🌋",
+                                text="𝘽𝙚𝙣𝙞 𝙂𝙧𝙪𝙗𝙪𝙣𝙖 𝙀𝙠𝙡𝙚 🌋",
                                 url=f"https://t.me/{app.username}?startgroup=true",
                             )
                         ]
@@ -152,11 +152,11 @@ Sonraki çiftler {tomorrow} tarihinde seçilecektir!!**
             c2_name = (await app.get_users(c2_id)).first_name  # İkinci kullanıcının ismini al
 
             TXT = f"""
-**Bugünün Çifti 🎉:
+**𝘽𝙪𝙜𝙪̈𝙣𝙪̈𝙣 𝘾̧𝙞𝙛𝙩𝙞 🎉:
 
 [{c1_name}](tg://openmessage?user_id={c1_id}) + [{c2_name}](tg://openmessage?user_id={c2_id}) = ❣️
 
-Sonraki çiftler {tomorrow} tarihinde seçilecektir!!**
+𝙎𝙤𝙣𝙧𝙖𝙠𝙞 𝙘̧𝙞𝙛𝙩𝙡𝙚𝙧 {tomorrow} 𝙩𝙖𝙧𝙞𝙝𝙞𝙣𝙙𝙚 𝙨𝙚𝙘̧𝙞𝙡𝙚𝙘𝙚𝙠𝙩𝙞𝙧!!**
             """
             await message.reply_photo(
                 b,
@@ -165,7 +165,7 @@ Sonraki çiftler {tomorrow} tarihinde seçilecektir!!**
                     [
                         [
                             InlineKeyboardButton(
-                                text="Beni Ekle🌋",
+                                text="𝘽𝙚𝙣𝙞 𝙂𝙧𝙪𝙗𝙪𝙣𝙖 𝙀𝙠𝙡𝙚🌋",
                                 url=f"https://t.me/{app.username}?startgroup=true",
                             )
                         ]
