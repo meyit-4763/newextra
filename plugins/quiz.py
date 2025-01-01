@@ -10,7 +10,7 @@ from YukkiMusic import app
 last_command_time = {}
 
 
-@app.on_message(filters.command(["quiz"]))
+@app.on_message(filters.command(["test"]))
 async def quiz(client, message):
     user_id = message.from_user.id
     current_time = time.time()
@@ -48,5 +48,5 @@ async def quiz(client, message):
     )
 
 
-__MODULE__ = "Qᴜɪᴢ"
-__HELP__ = " /quiz - Rastgele bir quiz almak için"
+__MODULE__ = "𝙏𝙚𝙨𝙩"
+__HELP__ = " /test - Rastgele bir quiz almak için"
