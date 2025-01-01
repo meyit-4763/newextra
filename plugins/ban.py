@@ -436,9 +436,9 @@ async def pin(_, message: Message):
     if message.command[0][0] == "u":
         await r.unpin()
         return await message.reply_text(
-            f"𝘽𝙪 𝙢𝙚𝙨𝙖𝙟ı𝙣 𝙨𝙖𝙗𝙞𝙩𝙡𝙚𝙢𝙚𝙨𝙞 𝙠𝙖𝙡𝙙ı𝙧ı𝙡𝙙ı: [this]({r.link})."
-        ) 
+            f"𝘽𝙪 𝙢𝙚𝙨𝙖𝙟ı𝙣 𝙨𝙖𝙗𝙞𝙩𝙡𝙚𝙢𝙚𝙨𝙞 𝙠𝙖𝙡𝙙ı𝙧ı𝙡𝙙ı: [this]({r.link})", 
             disable_web_page_preview=True,
+            ) 
     await r.pin(disable_notification=True)
     await message.reply(
         f"Sabitlenmiş [this]({r.link}) mesaj.") 
