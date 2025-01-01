@@ -205,7 +205,7 @@ async def get_welcome_func(_, message):
     )
 
 
-__MODULE__ = "Sᴇʟᴀᴍʟᴀsᴍᴀ"
+__MODULE__ = "𝙃𝙤𝙨̧ 𝙂𝙚𝙡𝙙𝙞𝙣"
 __HELP__ = """
 /setwelcome - Bu komutu bir mesaja yanıt olarak gönderin, selamlaşma mesajı için doğru formatı kontrol edin, bu mesajın sonuna bakın.
 
