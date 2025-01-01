@@ -9,7 +9,7 @@ from pyrogram.types import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,
 )
-from YukkiMusic import app
+from DnsXMusic import app
 
 
 # Verilen metni figlet formatında döndür ve bir klavye oluştur
