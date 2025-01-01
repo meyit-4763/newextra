@@ -178,7 +178,7 @@ async def chat_info_func(_, message: Message):
         await m.edit(e)
 
 
-__MODULE__ = "Bilgi"
+__MODULE__ = "𝘽𝙞𝙡𝙜𝙞"
 __HELP__ = """
 **Kullanıcı & Sohbet Bilgisi:**
 
