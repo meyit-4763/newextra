@@ -397,7 +397,7 @@ async def demote(_, message: Message):
 
 # Pin Messages
 
-@@app.on_message(filters.command(["unpinall"]) & filters.group & ~BANNED_USERS)
+@app.on_message(filters.command(["unpinall"]) & filters.group & ~BANNED_USERS)
 @adminsOnly("can_pin_messages")
 async def pin(_, message: Message):
     if message.command[0] == "unpinall":
