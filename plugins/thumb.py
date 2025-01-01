@@ -2,7 +2,7 @@ import re
 
 from pyrogram import filters
 from youtubesearchpython.__future__ import VideosSearch
-from YukkiMusic import app
+from DnsXMusic import app
 
 
 async def gen_infos(url):
