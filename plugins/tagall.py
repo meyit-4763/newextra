@@ -270,7 +270,7 @@ async def cancelcmd(_, message):
         return
 
 
-__MODULE__ = "Tᴀɢᴀʟʟ"
+__MODULE__ = "𝙏𝙖𝙜𝘼𝙡𝙡"
 __HELP__ = """
 
 @all veya /all | /tagall veya @tagall | /mentionall veya @mentionall [metin] veya [bir mesaja yanıt vererek] tüm kullanıcıları etiketlemek için kullanın.
