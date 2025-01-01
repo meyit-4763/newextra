@@ -14,7 +14,7 @@ async def write_text(client, message):
     )
 
 
-__MODULE__ = "Qʀɢᴇɴ"
+__MODULE__ = "𝙌𝙍"
 
 __HELP__ = """
 Bu modül QR kodları oluşturur. `/qr` komutunu takip eden metin veya URL ile kodlamak istediğiniz içeriği sağlayın. Örneğin, `/qr https://t.me/vivekkumar07089`. Bot, sağlanan girdi için bir QR kodu oluşturacaktır. URL'ler için protokolü (http:// veya https://) dahil etmeyi unutmayın. QR kodları oluşturmanın keyfini çıkarın!
