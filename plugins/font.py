@@ -2553,4 +2553,4 @@ __HELP__ = """
 • /font [metin] - Basit metni, fontunu değiştirerek güzel bir metne dönüştürür.
  """
 
-__MODULE__ = "Fᴏɴᴛ"
+__MODULE__ = "𝙁𝙤𝙣𝙩"
