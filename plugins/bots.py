@@ -14,22 +14,22 @@ async def bots(client, message):
         ):
             botList.append(bot.user)  # Botları listeye ekle
         lenBotList = len(botList)  # Bot sayısını al
-        text3 = f"**Bot Listesi - {message.chat.title}**\n\n🤖 Botlar\n"
+        text3 = f"**𝘽𝙤𝙩 𝙇𝙞𝙨𝙩𝙚𝙨𝙞 - {message.chat.title}**\n\n🤖 𝘽𝙤𝙩𝙡𝙖𝙧\n"
         while len(botList) > 1:  # Liste 1'den fazla bot içeriyorsa
             bot = botList.pop(0)  # İlk botu çıkar
             text3 += f"├ @{bot.username}\n"  # Botun kullanıcı adını ekle
         else:  # Liste 1 bot içeriyorsa
             bot = botList.pop(0)  # Son botu çıkar
             text3 += f"└ @{bot.username}\n\n"  # Botun kullanıcı adını ekle
-            text3 += f"**Toplam Bot Sayısı**: {lenBotList}**"  # Toplam bot sayısını ekle
+            text3 += f"**𝙏𝙤𝙥𝙡𝙖𝙢 𝘽𝙤𝙩 𝙎𝙖𝙮ı𝙨ı**: {lenBotList}**"  # Toplam bot sayısını ekle
             await app.send_message(message.chat.id, text3)  # Mesajı gönder
     except FloodWait as e:  # FloodWait hatası alırsak
         await asyncio.sleep(e.value)  # Belirtilen süre kadar bekle
 
 
-__MODULE__ = "Botlar"  # Modül adı
+__MODULE__ = "𝘽𝙤𝙩𝙨"  # Modül adı
 __HELP__ = """
-**Botlar**
+**𝘽𝙤𝙩𝙡𝙖𝙧**
 
-• /bots - Grubun içindeki botların listesini al.
+• /bots - 𝙂𝙧𝙪𝙗𝙪𝙣 𝙞𝙘̧𝙞𝙣𝙙𝙚𝙠𝙞 𝙗𝙤𝙩𝙡𝙖𝙧ı𝙣 𝙡𝙞𝙨𝙩𝙚𝙨𝙞𝙣𝙞 𝙜𝙤̈𝙨𝙩𝙚𝙧𝙞𝙧.
 """
