@@ -57,4 +57,4 @@ Bu komutları kullanarak doğruluk veya cesaret oyunu oynayabilirsiniz:
 Eğer soruları alırken herhangi bir sorunla karşılaşırsanız, lütfen daha sonra tekrar deneyin.
 """
 
-__MODULE__ = "Dᴏɢʀᴜʟᴜᴋ"
+__MODULE__ = "𝘿-𝘾"
