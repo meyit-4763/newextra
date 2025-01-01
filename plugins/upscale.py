@@ -1,8 +1,8 @@
-"""from os import remove
+from os import remove
 from pyrogram import filters
 from lexica import Client as LexicaClient
 from pyrogram.errors.exceptions.bad_request_400 import PhotoInvalidDimensions
-from YukkiMusic import app
+from DnsXMusic import app
 from utils.error import capture_err
 
 lexica_client = LexicaClient()
