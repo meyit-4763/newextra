@@ -397,24 +397,23 @@ async def demote(_, message: Message):
 
 # Pin Messages
 
-@app.on_message(filters.command(["unpinall"]) & filters.group & ~BANNED_USERS)
+@@app.on_message(filters.command(["unpinall"]) & filters.group & ~BANNED_USERS)
 @adminsOnly("can_pin_messages")
 async def pin(_, message: Message):
     if message.command[0] == "unpinall":
         return await message.reply_text(
             "𝙏𝙪̈𝙢 𝙢𝙚𝙨𝙖𝙟𝙡𝙖𝙧ı 𝙨𝙖𝙗𝙞𝙩𝙩𝙚𝙣 𝙠𝙖𝙡𝙙ı𝙧𝙢𝙖𝙠 𝙞𝙨𝙩𝙚𝙙𝙞𝙜̆𝙞𝙣𝙞𝙯𝙚 𝙚𝙢𝙞𝙣 𝙢𝙞𝙨𝙞𝙣𝙞𝙯?",
-        )
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="𝙀𝙫𝙚𝙩", callback_data="unpin_yes"),
-                        InlineKeyboardButton(text="𝙃𝙖𝙮ı𝙧", callback_data="unpin_no"),
+                        InlineKeyboardButton(text="ʏᴇs", callback_data="unpin_yes"),
+                        InlineKeyboardButton(text="ɴᴏ", callback_data="unpin_no"),
                     ],
                 ]
-            )
-        
+            ),
+        )
 
-            
+
 @app.on_callback_query(filters.regex(r"unpin_(yes|no)"))
 async def callback_query_handler(_, query: CallbackQuery):
     if query.data == "unpin_yes":
