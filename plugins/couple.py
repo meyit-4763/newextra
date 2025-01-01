@@ -9,21 +9,21 @@ from pyrogram import filters
 from pyrogram.enums import ChatType
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from TheApi import api
-from YukkiMusic import app
+from DnsXMusic import app
 
 from utils import get_couple, get_image, save_couple
 
 
 # Mevcut tarihi GMT+5:30 saat diliminde al
 def get_today_date():
-    timezone = pytz.timezone("Asia/Kolkata")
+    timezone = pytz.timezone("Europe/istanbul")
     now = datetime.now(timezone)
     return now.strftime("%d/%m/%Y")
 
 
 # Yarın tarihini GMT+5:30 saat diliminde al
 def get_todmorrow_date():
-    timezone = pytz.timezone("Asia/Kolkata")
+    timezone = pytz.timezone("Europe/istanbul")
     tomorrow = datetime.now(timezone) + timedelta(days=1)
     return tomorrow.strftime("%d/%m/%Y")
 
@@ -42,7 +42,7 @@ tomorrow = get_todmorrow_date()
 today = get_today_date()
 
 
-@app.on_message(filters.command(["couple", "couples"]))
+@app.on_message(filters.command(["asıklar", "couples"]))
 async def ctest(_, message):
     cid = message.chat.id
     if message.chat.type == ChatType.PRIVATE:
