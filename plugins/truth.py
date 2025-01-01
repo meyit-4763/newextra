@@ -1,6 +1,6 @@
 import requests
 from pyrogram import filters
-from YukkiMusic import app
+from DnsXMusic import app
 
 
 truth_api_url = "https://api.truthordarebot.xyz/v1/truth"
