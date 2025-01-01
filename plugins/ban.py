@@ -14,16 +14,16 @@ from pyrogram.types import (
     InlineKeyboardMarkup,
     Message,
 )
-from YukkiMusic import app
-from YukkiMusic.core.mongo import mongodb
-from YukkiMusic.misc import SUDOERS
-from YukkiMusic.utils.database import save_filter
-from YukkiMusic.utils.functions import (
+from DnsXMusic import app
+from DnsXMusic.core.mongo import mongodb
+from DnsXMusic.misc import SUDOERS
+from DnsXMusic.utils.database import save_filter
+from DnsXMusic.utils.functions import (
     extract_user,
     extract_user_and_reason,
     time_converter,
 )
-from YukkiMusic.utils.keyboard import ikb
+from DnsXMusic.utils.keyboard import ikb
 
 from utils.error import capture_err
 from utils.permissions import adminsOnly, member_permissions
