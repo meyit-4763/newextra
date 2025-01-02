@@ -37,7 +37,7 @@ async def handle_left_member(member, chat):
             await chat.ban_member(member.id)
             await app.send_message(
                 chat.id,
-                f"{member.mention} küresel olarak yasaklandı ve çıkarıldı. "
+                f"{member.mention} küresel olarak yasaklandı. "
                 + "Eğer bunun yanlış bir yasak olduğunu düşünüyorsanız, "
                 + "destek sohbetinde itiraz edebilirsiniz.",
             )
@@ -120,7 +120,7 @@ async def send_left_message(chat: Chat, user_id: int, delete: bool = False):
 @app.on_message(filters.command("setgoodbye") & ~filters.private)
 @adminsOnly("can_change_info")
 async def set_goodbye_func(_, message):
-    usage = "Bir metne yanıt vermeniz gerekiyor, GIF veya fotoğraf ile bunu iyi bir veda mesajı olarak ayarlamak için.\n\nNot: GIF ve fotoğraf için başlık gereklidir."
+    usage = "Bir metne yanıt vermeniz gerekiyor, \nGIF veya fotoğraf ile bunu iyi bir veda mesajı olarak ayarlamak için.\n\nNot: GIF ve fotoğraf için başlık gereklidir."
     key = InlineKeyboardMarkup(
         [
             [
@@ -171,7 +171,7 @@ async def set_goodbye_func(_, message):
             )
         else:
             return await message.reply_text(
-                "Yanlış biçimlendirme, lütfen yardım bölümünü kontrol edin.\n\n**Kullanım:**\nMetin: `Text`\nMetin + Butonlar: `Text ~ Butonlar`",
+                "Yanlış biçimlendirme, \nlütfen yardım bölümünü kontrol edin.\n\n**Kullanım:**\nMetin: `Text`\nMetin + Butonlar: `Text ~ Butonlar`",
                 reply_markup=key,
             )
     except UnboundLocalError:
@@ -220,7 +220,7 @@ async def goodbye(client, message: Message):
                 "/goodbye - Veda mesajınızı almak için\n"
                 "/goodbye [on, y, true, enable, t] - Veda mesajlarını etkinleştirmek için\n"
                 "/goodbye [off, n, false, disable, f, no] - Veda mesajlarını devre dışı bırakmak için\n"
-                "/delgoodbye veya /deletegoodbye - Veda mesajını silmek ve veda mesajlarını devre dışı bırakmak için"
+                "/delgoodbye veya /deletegoodbye - Veda mesajını silmek ve veda\nmesajlarını devre dışı bırakmak için"
             )
     else:
         await message.reply_text(
@@ -228,7 +228,7 @@ async def goodbye(client, message: Message):
             "/goodbye - Veda mesajınızı almak için\n"
             "/goodbye [on, y, true, enable, t] - Veda mesajlarını etkinleştirmek için\n"
             "/goodbye [off, n, false, disable, f, no] - Veda mesajlarını devre dışı bırakmak için\n"
-            "/delgoodbye veya /deletegoodbye - Veda mesajını silmek ve veda mesajlarını devre dışı bırakmak için"
+            "/delgoodbye veya /deletegoodbye - Veda mesajını silmek ve veda\nmesajlarını devre dışı bırakmak için"
         )
 
 
@@ -262,11 +262,11 @@ __MODULE__ = "𝙑𝙀𝘿𝘼"
 __HELP__ = """
 **Veda Mesajı Yönetimi:**
 
-/setgoodbye - Bir mesaja yanıt vererek veda mesajını ayarlayın. GIF veya fotoğraf ile ayarlamak için başlık gereklidir.
+/setgoodbye - Bir mesaja yanıt vererek veda mesajını ayarlayın.\nGIF veya fotoğraf ile ayarlamak için başlık gereklidir.
 /goodbye - Veda mesajınızı almak için kullanın.
 /goodbye [on, y, true, enable, t] - Veda mesajlarını etkinleştirmek için kullanın.
 /goodbye [off, n, false, disable, f, no] - Veda mesajlarını devre dışı bırakmak için kullanın.
 /delgoodbye veya /deletegoodbye - Veda mesajını silmek ve veda mesajlarını devre dışı bırakmak için kullanın.
 
-**Not:** Veda mesajı ayarlamak için metin, GIF veya fotoğraf kullanabilirsiniz. Başlık, GIF ve fotoğraf için gereklidir.
+**Not:** Veda mesajı ayarlamak için metin, GIF veya fotoğraf kullanabilirsiniz.\nBaşlık, GIF ve fotoğraf için gereklidir.
 """
