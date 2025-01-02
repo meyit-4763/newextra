@@ -31,12 +31,12 @@ async def tag_all_users(_, message):
 
     if message.chat.id in SPAM_CHATS:
         return await message.reply_text(
-            "Etiketleme işlemi zaten devam ediyor. Durdurmak istiyorsanız /cancel kullanın."
+            "Etiketleme işlemi zaten devam ediyor.\nDurdurmak istiyorsanız /cancel kullanın."
         )
     replied = message.reply_to_message
     if len(message.command) < 2 and not replied:
         await message.reply_text(
-            "**Tüm kullanıcıları etiketlemek için bir metin verin, örneğin »** `@all Merhaba Arkadaşlar`"
+            "**Tüm kullanıcıları etiketlemek için bir metin verin,\nÖrneğin »** `@all Merhaba Arkadaşlar`"
         )
         return
     if replied:
@@ -110,12 +110,12 @@ async def tag_all_users(_, message):
 async def tag_all_admins(_, message):
     if message.chat.id in SPAM_CHATS:
         return await message.reply_text(
-            "Etiketleme işlemi zaten devam ediyor. Durdurmak istiyorsanız /cancel kullanın."
+            "Etiketleme işlemi zaten devam ediyor.\nDurdurmak istiyorsanız /cancel kullanın."
         )
     replied = message.reply_to_message
     if len(message.command) < 2 and not replied:
         await message.reply_text(
-            "**Tüm yöneticileri etiketlemek için bir metin verin, örneğin »** `@admins Merhaba Arkadaşlar`"
+            "**Tüm yöneticileri etiketlemek için bir metin verin,\nÖrneğin »** `@admins Merhaba Arkadaşlar`"
         )
         return
     if replied:
@@ -206,7 +206,7 @@ async def admintag_with_reporting(client, message):
     if message.command[0] == "report":
         if from_user_id in admins:
             return await message.reply_text(
-                "Oops! Görünüşe göre bir yöneticisiniz!\nYönetici olan bir kullanıcıyı raporlayamazsınız."
+                "Oops! Görünüşe göre bir yöneticiyi raporlamak istiyorsun!\nYönetici olan bir kullanıcıyı raporlayamazsınız."
             )
 
     if from_user_id in admins:
@@ -273,11 +273,11 @@ async def cancelcmd(_, message):
 __MODULE__ = "𝙏𝙖𝙜𝘼𝙡𝙡"
 __HELP__ = """
 
-@all veya /all | /tagall veya @tagall | /mentionall veya @mentionall [metin] veya [bir mesaja yanıt vererek] tüm kullanıcıları etiketlemek için kullanın.
+@all veya /all | /tagall veya @tagall | /mentionall veya \n@mentionall [metin] veya [bir mesaja yanıt vererek] tüm kullanıcıları etiketlemek için kullanın.
 
-/admins veya @admins | /report [metin] veya [bir mesaja yanıt vererek] tüm yöneticileri etiketlemek için kullanın.
+/admins veya @admins | /report [metin] veya [bir mesaja yanıt vererek] \ntüm yöneticileri etiketlemek için kullanın.
 
-/cancel veya @cancel | /offmention veya @offmention | /mentionoff veya @mentionoff | /cancelall veya @cancelall - Devam eden herhangi bir etiketleme işlemini durdurmak için kullanın.
+/cancel veya @cancel | /offmention veya @offmention | /mentionoff veya @mentionoff | /cancelall veya @cancelall - \nDevam eden herhangi bir etiketleme işlemini durdurmak için kullanın.
 
-**__NOT__** Bu komut yalnızca sohbetin yöneticileri tarafından kullanılabilir ve botun ve asistanın grup içinde bir yönetici olduğundan emin olun.
+**__NOT__** Bu komut yalnızca sohbetin yöneticileri tarafından kullanılabilir \nve botun ve asistanın grup içinde bir yönetici olduğundan emin olun.
 """
